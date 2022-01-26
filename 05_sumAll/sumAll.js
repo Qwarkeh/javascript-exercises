@@ -16,6 +16,13 @@ const sumAll = function(intOne, intTwo) {
         return a + b;
     }, 0);  
 
+    if ((intOne < 0 || intTwo < 0)) {
+        sum = "ERROR";
+    }
+    // if intOne and intTwo are not integers, return ERROR
+    // use a type check
+
+
     return sum;
 
 };
