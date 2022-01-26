@@ -3,7 +3,7 @@ const sumAll = function(intOne, intTwo) {
     const inputArray = [intOne, intTwo];
     const sortedArray = inputArray.sort();
 
-    //create a new array and fill it
+    //create a new array and fill it with incremental integers
     let incrementedArray = [sortedArray[0]];
     let num = sortedArray[0];
     for (let i = 1; i < sortedArray[1]; i++) {
@@ -16,15 +16,17 @@ const sumAll = function(intOne, intTwo) {
         return a + b;
     }, 0);  
 
+    //check for negative numbers
     if ((intOne < 0 || intTwo < 0)) {
         sum = "ERROR";
     }
-    // if intOne and intTwo are not integers, return ERROR
-    // use a type check
-
+   
+    //check for non-numbers
+    if (typeof intOne !== "number" || typeof intTwo !== "number") {
+        sum = "ERROR";
+    }
 
     return sum;
-
 };
 
 // Do not edit below this line
