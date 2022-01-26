@@ -1,20 +1,21 @@
-const removeFromArray = function(array, manyMoreArgs) {
+const removeFromArray = function(array, ...args) {
 
-//find length of array and manyMoreArgs
-//compare lengths
-//larger length ends up in the for loop
-//nest another for loop that loops through manyMoreArgs and compares it to array
+    let argsArray = args;
+    let argsLength = argsArray.length;
 
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === value) {
-            array.splice(i, 1);
-            i--;
+    let arrayLength = array.length;
+        for (let i = 0; i < arrayLength; i++) {
+            for (let j = 0; j < argsLength; j++) {
+                if (array[i] === argsArray[j]) {
+                    array.splice(i, 1);
+                    i--;
+                }
+            }
         }
-    }
-
-    return array;
-
+        return array;
 };
+
+//removeFromArray([1,2,3], 3, 4, 5);
 
 // Do not edit below this line
 module.exports = removeFromArray;
