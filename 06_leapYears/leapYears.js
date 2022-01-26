@@ -7,10 +7,13 @@ const leapYears = function(year) {
     }
 
     if (leapYear === true){
-        if (year % 100 === 0) {
-            if (year % 400 === 0){
-               leapYear = true;
-            }
+        if (year % 100 !== 0) {
+            leapYear = true;
+        }
+        else if (year % 100 === 0 && year % 400 === 0) {
+            leapYear = true;
+        } else {
+            leapYear = false;
         }
     }
 
